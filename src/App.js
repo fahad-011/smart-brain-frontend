@@ -14,17 +14,17 @@ const app = new Clarifai.App({
  apiKey: '7a32d401e4cc48f095352ed129ea47e7'
 });
 
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 30,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    }
-  }
-}
+// const particlesOptions = {
+//   particles: {
+//     number: {
+//       value: 30,
+//       density: {
+//         enable: true,
+//         value_area: 800
+//       }
+//     }
+//   }
+// }
 
 class App extends Component {
   constructor() {
@@ -132,7 +132,7 @@ class App extends Component {
             </div>
           : (
              route === 'signin'
-             ? <Signin onRouteChange={this.onRouteChange}/>
+             ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             )
         }
