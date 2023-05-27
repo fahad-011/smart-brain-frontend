@@ -9,18 +9,18 @@ import Rank from './components/Rank/Rank';
 import './App.css';
 
 const initialState = {
-  input: '',
-      imageUrl: '',
-      box: {},
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: ''
-      }
+    input: '',
+    imageUrl: '',
+    box: {},
+    route: 'signin',
+    isSignedIn: false,
+    user: {
+      id: '',
+      name: '',
+      email: '',
+      entries: 0,
+      joined: ''
+    }
 }
 
 class App extends Component {
@@ -62,7 +62,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('https://arcane-woodland-28279.herokuapp.com/imageurl', {
+      fetch('https://cute-plum-pike-shoe.cyclic.app/imageurl', {
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -72,7 +72,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://arcane-woodland-28279.herokuapp.com/image', {
+          fetch('https://cute-plum-pike-shoe.cyclic.app/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
